@@ -16,6 +16,8 @@ const answer2= ["No","No","No","No","Scratch","No","No"]
 const answer3= ["","","","","Higher level language","",""]
 **/
 
+window.onload=function(){
+    
 var q1a1 = document.getElementById("q1a1")
 var q1a2 = document.getElementById("q1a2")
 
@@ -34,6 +36,13 @@ var q5a3 = document.getElementById("q5a3")
 
 var q6a1 = document.getElementById("q6a1")
 var q6a2 = document.getElementById("q6a2")
+
+var q1b = document.getElementById("q1b")
+var q2b = document.getElementById("q2b")
+var q3b = document.getElementById("q3b")
+var q4b = document.getElementById("q4b")
+var q5b = document.getElementById("q5b")
+var q6b = document.getElementById("q6b") 
 
 //corresponds to the different groups
 var bPython = 0
@@ -61,5 +70,28 @@ function addiJava(){
 }
 
 function addWeb(){
-    web= web++
+    web= web+1;
+}
+
+//when next button clicked checks which 
+function q1Acheck(){
+    if(q1a1.checked){
+        console.log("success")
+        addWeb()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    } 
+    location.replace("q_page2.html")
+}
+
+if(q1b){
+    q1b.addEventListener("click", q1Acheck);
+}
+
+
+
+
+
+
+
+
 }
