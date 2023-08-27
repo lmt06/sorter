@@ -52,34 +52,51 @@ var web = 0
 
 var advanced = 0
 
-
+//each one of these makes the local storage item value (originally string) an int
+//sets it equal the variavle then adds one then set local storage item equal to variable
 function addbPython(){
+    bPython = parseInt(localStorage.getItem("bPython"));
     bPython=bPython+1
+    localStorage.setItem("bPython", bPython);
+    
 }
 
 function addiPython(){
-    iPython = iPython+1;
+    iPython = parseInt(localStorage.getItem("iPython"));
+    iPython=iPython+1
+    localStorage.setItem("iPython", iPython);
 }
 
 function addbJava(){
-    bJava= bJava+1;
+    bJava = parseInt(localStorage.getItem("bJava"));
+    bJava=bJava+1
+    localStorage.setItem("bJava", bJava);
+    
 }
 
 function addiJava(){
-    iJava= iJava+1;
+    iJava = parseInt(localStorage.getItem("iJava"));
+    iJava=iJava+1
+    localStorage.setItem("iJava", iJava);
 }
 
 function addWeb(){
+    web = parseInt(localStorage.getItem("web"));
     web= web+1;
+    localStorage.setItem("web", web);
+    
+    
 }
 
 //when next button clicked checks which 
 function q1Acheck(){
     if(q1a1.checked){
         console.log("success")
-        addWeb()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        addWeb()  
     } 
+
+    const updatedWeb = parseInt(localStorage.getItem("web"));
+    console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +updatedWeb)
     location.replace("q_page2.html")
 }
 
@@ -87,16 +104,28 @@ function q2Acheck(){
     if(q2a1.checked){
         addbJava()
         addiJava()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
     }
+
+    const updatedWeb = parseInt(localStorage.getItem("web"));
+    const updatedbP = parseInt(localStorage.getItem("bPython"));
+    const updatedbJ = parseInt(localStorage.getItem("bJava"));
+    const updatediJ = parseInt(localStorage.getItem("iJava"));
+    console.log("bJ= " +updatedbJ + " iJ=" + updatediJ + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
 function q3Acheck(){
     if(q3a1.checked){
         addbPython()
         addiPython ()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
+
+    const updatedWeb = parseInt(localStorage.getItem("web"));
+    const updatedbP = parseInt(localStorage.getItem("bPython"));
+    const updatediP = parseInt(localStorage.getItem("iPython"))
+    const updatedbJ = parseInt(localStorage.getItem("bJava"));
+    const updatediJ = parseInt(localStorage.getItem("iJava"));
+    console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
 function q4Acheck(){
@@ -104,22 +133,29 @@ function q4Acheck(){
         addbPython()
         addbJava()
         addWeb()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+
     }
     if(q4a2.checked){
         addbPython()
         addbJava()
         addWeb()
         addiPython()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
 
     if(q4a3.checked){
         addWeb()
         addiPython()
         addiJava()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
+
+    const updatedWeb = parseInt(localStorage.getItem("web"));
+    const updatedbP = parseInt(localStorage.getItem("bPython"));
+    const updatediP = parseInt(localStorage.getItem("iPython"))
+    const updatedbJ = parseInt(localStorage.getItem("bJava"));
+    const updatediJ = parseInt(localStorage.getItem("iJava"));
+    console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
 function q5Acheck(){
@@ -127,14 +163,21 @@ function q5Acheck(){
         addiPython()
         addiJava()
         addWeb()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
     if(q5a2.checked){
         addbPython()
         addbJava()
         addWeb()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
+
+    const updatedWeb = parseInt(localStorage.getItem("web"));
+    const updatedbP = parseInt(localStorage.getItem("bPython"));
+    const updatediP = parseInt(localStorage.getItem("iPython"))
+    const updatedbJ = parseInt(localStorage.getItem("bJava"));
+    const updatediJ = parseInt(localStorage.getItem("iJava"));
+    console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
 function q6Acheck(){
@@ -142,14 +185,21 @@ function q6Acheck(){
         addiPython()
         addiJava()
         addWeb()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
     if(q6a2.checked){
         addbPython()
         addbJava()
         addWeb()
-        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+        
     }
+
+    const updatedWeb = parseInt(localStorage.getItem("web"));
+    const updatedbP = parseInt(localStorage.getItem("bPython"));
+    const updatediP = parseInt(localStorage.getItem("iPython"))
+    const updatedbJ = parseInt(localStorage.getItem("bJava"));
+    const updatediJ = parseInt(localStorage.getItem("iJava"));
+    console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
 if(q1b){
@@ -176,7 +226,30 @@ if(q6b){
     q6.addEventListener("click",q6Acheck)
 }
 
-
+//this checks to see if there are local storage objects or not for values
+//if not then the objects are created
+window.onload = function(){
+    console.log("something")
+    if (!localStorage.getItem("bPython")) {
+        localStorage.setItem("bPython", 0);
+    }
+    
+    if (!localStorage.getItem("iPython")) {
+        localStorage.setItem("iPython", 0);
+    }
+    
+    if (!localStorage.getItem("bJava")) {
+        localStorage.setItem("bJava", 0);
+    }
+    
+    if (!localStorage.getItem("iJava")) {
+        localStorage.setItem("iJava", 0);
+    }
+    
+    if (!localStorage.getItem("web")) {
+        localStorage.setItem("web", 0);
+    }
+}
 
 
 

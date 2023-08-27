@@ -1,0 +1,5 @@
+things left on proj:
+-make sure radio buttons can be checked/unchecked
+-css
+    -center elements
+    -make logo pretty, (maybe link back to start?)
