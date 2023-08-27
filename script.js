@@ -16,8 +16,7 @@ const answer2= ["No","No","No","No","Scratch","No","No"]
 const answer3= ["","","","","Higher level language","",""]
 **/
 
-window.onload=function(){
-    
+
 var q1a1 = document.getElementById("q1a1")
 var q1a2 = document.getElementById("q1a2")
 
@@ -53,20 +52,21 @@ var web = 0
 
 var advanced = 0
 
+
 function addbPython(){
-    bPython = bPython++
+    bPython=bPython+1
 }
 
 function addiPython(){
-    iPython = iPython++
+    iPython = iPython+1;
 }
 
 function addbJava(){
-    bJava= bJava++
+    bJava= bJava+1;
 }
 
 function addiJava(){
-    iJava= iJava++
+    iJava= iJava+1;
 }
 
 function addWeb(){
@@ -83,15 +83,101 @@ function q1Acheck(){
     location.replace("q_page2.html")
 }
 
+function q2Acheck(){
+    if(q2a1.checked){
+        addbJava()
+        addiJava()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+}
+
+function q3Acheck(){
+    if(q3a1.checked){
+        addbPython()
+        addiPython ()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+}
+
+function q4Acheck(){
+    if(q4a1.checked){
+        addbPython()
+        addbJava()
+        addWeb()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+    if(q4a2.checked){
+        addbPython()
+        addbJava()
+        addWeb()
+        addiPython()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+
+    if(q4a3.checked){
+        addWeb()
+        addiPython()
+        addiJava()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+}
+
+function q5Acheck(){
+    if(q5a1.checked){
+        addiPython()
+        addiJava()
+        addWeb()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+    if(q5a2.checked){
+        addbPython()
+        addbJava()
+        addWeb()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+}
+
+function q6Acheck(){
+    if(q6a1.checked){
+        addiPython()
+        addiJava()
+        addWeb()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+    if(q6a2.checked){
+        addbPython()
+        addbJava()
+        addWeb()
+        console.log("bJ= " +bJava + " iJ=" + iJava + " bP=" + bPython + " W=" +web)
+    }
+}
+
 if(q1b){
     q1b.addEventListener("click", q1Acheck);
 }
 
-
-
-
-
-
-
-
+if(q2b){
+    q2b.addEventListener("click", q2Acheck)
 }
+
+if(q3b){
+    q3b.addEventListener("click", q3Acheck)
+}
+
+if(q4b){
+    q4b.addEventListener("click", q4Acheck)
+}
+
+if(q5b){
+    q5b.addEventListener("click", q5Acheck)
+}
+
+if(q6b){
+    q6.addEventListener("click",q6Acheck)
+}
+
+
+
+
+
+
