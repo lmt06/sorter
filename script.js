@@ -43,6 +43,10 @@ var q4b = document.getElementById("q4b")
 var q5b = document.getElementById("q5b")
 var q6b = document.getElementById("q6b") 
 
+var reset = document.getElementById("reset")
+
+var pie = document.getElementById("pie-chart")
+
 //corresponds to the different groups
 var bPython = 0
 var iPython = 0
@@ -51,6 +55,16 @@ var iJava = 0
 var web = 0
 
 var advanced = 0
+
+var isFinished = false
+
+function clearStorage(){
+    localStorage.clear()
+}
+if(reset){
+    reset.addEventListener("click", clearStorage)
+}
+
 
 //each one of these makes the local storage item value (originally string) an int
 //sets it equal the variavle then adds one then set local storage item equal to variable
@@ -180,6 +194,33 @@ function q5Acheck(){
     console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
+/**window.onload= function insertChart(){
+    console.log("chart function here")
+        new Chart(document.getElementById("pie-chart"), {
+            type: 'doughnut',
+            data:{
+                labels: ["beginner Python", "intermediate python",
+            "Web development", "beginner Java", "intermediate java"],
+            datasets: [{
+                backgroundColor: [ "red","blue","orange","yellow",
+            "green"],
+            data: [parseInt(localStorage.getItem("bPython")), parseInt(localStorage.getItem("iPython")),
+            parseInt(localStorage.getItem("web")), parseInt(localStorage.getItem("bJava")),
+            parseInt(localStorage.getItem("iJava"))]
+            }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Your results'
+                },
+                responsive:true
+            }
+        });
+    
+    
+} **/
+
 function q6Acheck(){
     if(q6a1.checked){
         addiPython()
@@ -196,10 +237,37 @@ function q6Acheck(){
 
     const updatedWeb = parseInt(localStorage.getItem("web"));
     const updatedbP = parseInt(localStorage.getItem("bPython"));
-    const updatediP = parseInt(localStorage.getItem("iPython"))
+    const updatediP = parseInt(localStorage.getItem("iPython"));
     const updatedbJ = parseInt(localStorage.getItem("bJava"));
     const updatediJ = parseInt(localStorage.getItem("iJava"));
-    console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
+    console.log("bJ= " +updatedbJ + " iJ=" + updatediJ + " bP=" + updatedbP + " W=" +updatedWeb)
+
+    /*new Chart(document.getElementById("pie-chart"), {
+        type: 'doughnut',
+        data:{
+            labels: ["beginner Python", "intermediate python",
+        "Web development", "beginner Java", "intermediate java"],
+        datasets: [{
+            backgroundColor: [ "red","blue","orange","yellow",
+        "green"],
+        /*data: [parseInt(localStorage.getItem("bPython")), parseInt(localStorage.getItem("iPython")),
+        parseInt(localStorage.getItem("web")), parseInt(localStorage.getItem("bJava")),
+        parseInt(localStorage.getItem("iJava"))] 
+        
+        data: [updatedbP,updatediP,updatedWeb,updatedbJ,updatediJ]
+        }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Your results'
+            },
+            responsive:true
+        }
+    }); */
+
+    isFinished=true
+    localStorage.setItem("isFinished",true)
 }
 
 if(q1b){
@@ -223,7 +291,7 @@ if(q5b){
 }
 
 if(q6b){
-    q6.addEventListener("click",q6Acheck)
+    q6b.addEventListener("click",q6Acheck)
 }
 
 //this checks to see if there are local storage objects or not for values
@@ -248,6 +316,33 @@ window.onload = function(){
     
     if (!localStorage.getItem("web")) {
         localStorage.setItem("web", 0);
+    }
+
+    if(localStorage.getItem("isFinished")){
+        console.log("here")
+        new Chart(document.getElementById("pie-chart"), {
+            type: 'doughnut',
+            data:{
+                labels: ["beginner Python", "intermediate python",
+            "Web development", "beginner Java", "intermediate java"],
+            datasets: [{
+                backgroundColor: [ "red","blue","orange","yellow",
+            "green"],
+            data: [parseInt(localStorage.getItem("bPython")), parseInt(localStorage.getItem("iPython")),
+            parseInt(localStorage.getItem("web")), parseInt(localStorage.getItem("bJava")),
+            parseInt(localStorage.getItem("iJava"))] 
+            
+            }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Your results'
+                },
+                responsive:true
+            }
+        });
+
     }
 }
 
