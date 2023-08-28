@@ -4,10 +4,15 @@ body {
     background-size:auto;
     background-attachment: fixed; 
 
+    font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+    text-align: center;
 
 }
 
 .container {
     border-radius: 100px;
     width: 500px;
+    display:block;
+    margin:0 auto;
 }
+

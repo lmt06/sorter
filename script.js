@@ -60,6 +60,7 @@ var isFinished = false
 
 function clearStorage(){
     localStorage.clear()
+    document.getElementById("aDiv").style.display = 'none'
 }
 if(reset){
     reset.addEventListener("click", clearStorage)
@@ -274,11 +275,11 @@ window.onload = function(){
         new Chart(document.getElementById("pie-chart"), {
             type: 'doughnut',
             data:{
-                labels: ["beginner Python", "intermediate python",
-            "Web development", "beginner Java", "intermediate java"],
+                labels: ["Beginner Python", "Intermediate Python",
+            "Web Development", "Beginner Java", "Intermediate Java"],
             datasets: [{
-                backgroundColor: [ "red","blue","orange","yellow",
-            "green"],
+                backgroundColor: [ "#fa1446","#44d5f2","purple","pink",
+            "#58ed7b"],
             data: [parseInt(localStorage.getItem("bPython")), parseInt(localStorage.getItem("iPython")),
             parseInt(localStorage.getItem("web")), parseInt(localStorage.getItem("bJava")),
             parseInt(localStorage.getItem("iJava"))] 
@@ -286,11 +287,14 @@ window.onload = function(){
             }]
             },
             options: {
-                title: {
-                    display: true,
-                    text: 'Your results'
-                },
-                responsive:true
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Your results'
+                    },
+                    responsive:true
+                }
+                
             }
         });
 
