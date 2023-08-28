@@ -194,32 +194,6 @@ function q5Acheck(){
     console.log("bJ= " +updatedbJ + " iJ=" + iJava + " bP=" + updatedbP + " W=" +updatedWeb)
 }
 
-/**window.onload= function insertChart(){
-    console.log("chart function here")
-        new Chart(document.getElementById("pie-chart"), {
-            type: 'doughnut',
-            data:{
-                labels: ["beginner Python", "intermediate python",
-            "Web development", "beginner Java", "intermediate java"],
-            datasets: [{
-                backgroundColor: [ "red","blue","orange","yellow",
-            "green"],
-            data: [parseInt(localStorage.getItem("bPython")), parseInt(localStorage.getItem("iPython")),
-            parseInt(localStorage.getItem("web")), parseInt(localStorage.getItem("bJava")),
-            parseInt(localStorage.getItem("iJava"))]
-            }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Your results'
-                },
-                responsive:true
-            }
-        });
-    
-    
-} **/
 
 function q6Acheck(){
     if(q6a1.checked){
@@ -242,29 +216,6 @@ function q6Acheck(){
     const updatediJ = parseInt(localStorage.getItem("iJava"));
     console.log("bJ= " +updatedbJ + " iJ=" + updatediJ + " bP=" + updatedbP + " W=" +updatedWeb)
 
-    /*new Chart(document.getElementById("pie-chart"), {
-        type: 'doughnut',
-        data:{
-            labels: ["beginner Python", "intermediate python",
-        "Web development", "beginner Java", "intermediate java"],
-        datasets: [{
-            backgroundColor: [ "red","blue","orange","yellow",
-        "green"],
-        /*data: [parseInt(localStorage.getItem("bPython")), parseInt(localStorage.getItem("iPython")),
-        parseInt(localStorage.getItem("web")), parseInt(localStorage.getItem("bJava")),
-        parseInt(localStorage.getItem("iJava"))] 
-        
-        data: [updatedbP,updatediP,updatedWeb,updatedbJ,updatediJ]
-        }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Your results'
-            },
-            responsive:true
-        }
-    }); */
 
     isFinished=true
     localStorage.setItem("isFinished",true)
